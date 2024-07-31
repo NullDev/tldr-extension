@@ -1,0 +1,30 @@
+{
+  "name": "tldr",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "engines": {
+    "node": ">=20.1.0"
+  },
+  "author": "NullDev",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/eslint-parser": "^7.25.1",
+    "@babel/plugin-syntax-import-attributes": "^7.24.7",
+    "@crxjs/vite-plugin": "^1.0.14",
+    "@types/chrome": "^0.0.269",
+    "eslint": "^9.8.0",
+    "lightningcss": "^1.25.1",
+    "sass": "^1.77.8",
+    "terser": "^5.31.3",
+    "vite": "^2.9.9"
+  }
+}
