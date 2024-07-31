@@ -1,0 +1,53 @@
+/* ========================= */
+/* = Copyright (c) NullDev = */
+/* ========================= */
+
+body {
+    min-width: 200px;
+    margin: 0px;
+    width: 400px;
+    height: 350px;
+    background: linear-gradient(to bottom, #E0E0E0 0%, #FFF 100%);
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+p.inst {
+    font-size: 15px;
+    color: #333;
+}
+
+div.in-wrap {
+    display: flex;
+    justify-content: center;
+
+    input#input {
+        width: 200px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 15px;
+        outline: none;
+        margin-right: 10px;
+    }
+
+    button#ask {
+        width: 100px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 15px;
+        background: #FFF;
+        cursor: pointer;
+        padding: 5px;
+        outline: none;
+    }
+}
+
+hr {
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+}
