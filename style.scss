@@ -29,6 +29,18 @@ a#settings {
     z-index: 1001;
 }
 
+img {
+    width: 100px;
+    height: auto;
+    margin: 20px 0 0 0;
+}
+
+p#output {
+    margin: 0 12px;
+    font-size: 19px;
+    font-weight: bold;
+}
+
 div#settings-page {
     position: absolute;
     top: 0;
