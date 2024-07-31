@@ -20,6 +20,37 @@ p.inst {
     color: #333;
 }
 
+a#settings {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+    text-decoration: none;
+    z-index: 1001;
+}
+
+div#settings-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    z-index: 1000;
+
+    &.hidden {
+        display: none;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    p#status {
+        font-size: 15px;
+    }
+}
+
 div.in-wrap {
     display: flex;
     justify-content: center;

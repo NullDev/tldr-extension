@@ -8,6 +8,8 @@
     </head>
     <body>
         <div id="app">
+            <a href="#" id="settings">⚙️</a>
+
             <h1>tl;dr</h1>
             <p class="inst">Ask the website a question and it will answer you.</p>
             <div class="in-wrap">
@@ -16,6 +18,13 @@
             </div>
             <hr>
             <p id="output"></p>
+        </div>
+
+        <div id="settings-page" class="hidden">
+            <p>Gemini API Key</p>
+            <input type="text" id="api-key" placeholder="API Key" />
+            <button id="save">Save</button>
+            <p id="status"></p>
         </div>
         <script type="module" src="/main.js"></script>
     </body>
