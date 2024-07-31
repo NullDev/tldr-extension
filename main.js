@@ -27,9 +27,22 @@ const apiCall = async function(pageData, question){
     const data = {
         contents: [{
             parts: [{
-                text: question,
+                text: `Question: ${question}\n\nWebsite Data: ${pageData}`,
             }],
         }],
+        systemInstruction: {
+            role: "user",
+            parts: [{
+                text: "You receive the content of a website and answer questions from users that will request specific information on the site",
+            }],
+        },
+        generationConfig: {
+            temperature: 1,
+            topK: 64,
+            topP: 0.95,
+            maxOutputTokens: 8192,
+            responseMimeType: "text/plain",
+        },
     };
 
     const response = await fetch(url, {
@@ -40,12 +53,11 @@ const apiCall = async function(pageData, question){
         body: JSON.stringify(data),
     }).then((res) => res.json());
 
-    alert(response);
-
     const output = document.getElementById("output");
     if (!output) return;
 
-    output.innerHTML = "";
+    const res = response.candidates[0].content.parts[0].text;
+    output.innerHTML = res;
 };
 
 /**
