@@ -5,6 +5,38 @@ import "./style/style.scss";
 /* ========================= */
 
 /**
+ * Start the loader
+ *
+ * @return {void}
+ */
+const startLoader = function(){
+    const loader = document.getElementById("loader");
+    if (!loader) return;
+
+    const output = document.getElementById("output");
+    if (!output) return;
+
+    output.style.display = "none";
+    loader.style.display = "grid";
+};
+
+/**
+ * Stop the loader
+ *
+ * @return {void}
+ */
+const stopLoader = function(){
+    const loader = document.getElementById("loader");
+    if (!loader) return;
+
+    const output = document.getElementById("output");
+    if (!output) return;
+
+    loader.style.display = "none";
+    output.style.display = "block";
+};
+
+/**
  * Make an API call to get the answer
  *
  * @param {string} pageData
@@ -29,6 +61,8 @@ const apiCall = async function(pageData, question){
         return;
     }
 
+    startLoader();
+
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
     const data = {
         contents: [{
@@ -39,7 +73,7 @@ const apiCall = async function(pageData, question){
         systemInstruction: {
             role: "user",
             parts: [{
-                text: "You receive the content of a website and answer questions from users that will request specific information on the site",
+                text: "You receive the content of a website and answer questions from users that will request specific information on the site. Only respond in text without markdown or special syntax.",
             }],
         },
         generationConfig: {
@@ -64,6 +98,8 @@ const apiCall = async function(pageData, question){
 
     const res = response.candidates[0].content.parts[0].text;
     output.innerHTML = res;
+
+    stopLoader();
 };
 
 /**
