@@ -19,7 +19,13 @@ const apiCall = async function(pageData, question){
     });
 
     if (!apiKey){
-        console.error("API key not set.");
+        const output = document.getElementById("output");
+        if (!output){
+            console.error("API key not set.");
+            return;
+        }
+
+        output.innerHTML = "Error: API key not set. Click on the gear icon on the top right to set the key.";
         return;
     }
 

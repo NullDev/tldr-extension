@@ -6,7 +6,7 @@ body {
     min-width: 200px;
     margin: 0px;
     width: 400px;
-    height: 350px;
+    height: 360px;
     background: linear-gradient(to bottom, #E0E0E0 0%, #FFF 100%);
     text-align: center;
 }
@@ -18,6 +18,12 @@ h1 {
 p.inst {
     font-size: 15px;
     color: #333;
+}
+
+p#output {
+    max-height: 100px;
+    display: block;
+    overflow-y: scroll;
 }
 
 a#settings {
