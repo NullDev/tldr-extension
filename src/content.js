@@ -1,4 +1,4 @@
-import "./content.scss";
+import "./style/content.scss";
 
 /* ========================= */
 /* = Copyright (c) NullDev = */
