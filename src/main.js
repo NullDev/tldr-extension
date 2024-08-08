@@ -127,7 +127,9 @@ const ask = function(){
             const { content } = response;
             if (!content) return;
 
-            apiCall(content, value);
+            apiCall(content, value).then(() => { // @ts-ignore
+                chrome.tabs.sendMessage(activeTab.id, { type: "stopLoader" });
+            });
         });
     });
 };

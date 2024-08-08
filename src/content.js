@@ -87,3 +87,11 @@ chrome.runtime.onMessage.addListener((message, _, sendResponse) => {
         });
     }
 });
+
+
+chrome.runtime.onMessage.addListener((message) => {
+    if (message.type === "stopLoader"){
+        const sc = document.getElementById("__f1fc290aff698d18__SCAN_WRAPPER__");
+        if (sc) sc.remove();
+    }
+});
