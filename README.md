@@ -21,7 +21,7 @@ It is my submission for the Google AI Competition
 3. Once the extension is loaded: Click on it, then click the gear icon and paste your gemini key. Then hit save <br><br>
 4. All done! You can now use tl;dr :) 
 
-If that does not work, see [Building yourself]().
+If that does not work, see [Building yourself](#wrench-building-yourself).
 
 <hr>
 
