@@ -7,11 +7,13 @@ body {
     margin: 0px;
     width: 400px;
     height: 360px;
-    background: linear-gradient(to bottom, #E0E0E0 0%, #FFF 100%);
+    background: #000;
     text-align: center;
 }
 
 #app {
+    color: #FFF;
+
     a#settings {
         position: absolute;
         top: 10px;
@@ -27,7 +29,6 @@ body {
     
     p.inst {
         font-size: 15px;
-        color: #333;
     }
 
     img#logo {
@@ -67,7 +68,7 @@ body {
         width: 25px;
         height: 50px;
         display: grid;
-        color: #000;
+        color: #FFF;
         background:
             linear-gradient(currentColor 0 0) top/100% 2px,
             radial-gradient(farthest-side at  top, #0000 calc(100% - 2px),currentColor calc(100% - 1px) ,#0000) top,
