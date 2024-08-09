@@ -16,6 +16,12 @@ It is my submission for the Google AI Competition
 
 ## :star: Downloading the extension
 
+The extension can be downloaded from the official Chrome store: [TODO:LINK](#x)
+
+<hr>
+
+## :satellite: Using prepacked extension
+
 1. Download the [latest crx from the release page](https://github.com/NullDev/tldr-extension/releases) <br><br>
 2. Either go to `chrome://extensions/` and drag-n-drop the crx in there, or open the crx with chrome. Then enable it (!) which might require enabling dev mode
 3. Once the extension is loaded: Click on it, then click the gear icon and paste your gemini key. Then hit save <br><br>
@@ -46,3 +52,7 @@ $ `npm run dev`<br><br>
 6. Done!
 
 <hr>
+
+## :lock: Data Protection Disclaimer
+
+This extension does not store any personal data. However website content that might include personal data is sent to Google Gemini AI when a question is submitted.
