@@ -3,15 +3,14 @@
 /* ========================= */
 
 #__f1fc290aff698d18__SCAN_WRAPPER__ {
-    background-color: rgba(35, 35, 35, 0.54)
-    ;
+    background-color: rgba(35, 35, 35, 0.54);
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 999999999999999999;
-    overflow: hidden;
+    z-index: 9999999999;
+    overflow: hidden !important;
 
     .scanner {
         height: 50vw;
