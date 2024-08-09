@@ -11,38 +11,101 @@ body {
     text-align: center;
 }
 
-h1 {
-    font-size: 40px;
-}
+#app {
+    a#settings {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 25px;
+        text-decoration: none;
+        z-index: 1001;
+    }
 
-p.inst {
-    font-size: 15px;
-    color: #333;
-}
+    h1 {
+        font-size: 40px;
+    }
+    
+    p.inst {
+        font-size: 15px;
+        color: #333;
+    }
 
-a#settings {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 25px;
-    text-decoration: none;
-    z-index: 1001;
-}
+    img#logo {
+        width: 100px;
+        height: auto;
+        margin: 20px 0 0 0;
+    }
 
-img {
-    width: 100px;
-    height: auto;
-    margin: 20px 0 0 0;
-}
+    div.in-wrap {
+        display: flex;
+        justify-content: center;
+    
+        input#input {
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+            outline: none;
+            margin-right: 10px;
+        }
+    
+        button#ask {
+            width: 100px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+            background: #FFF;
+            cursor: pointer;
+            padding: 5px;
+            outline: none;
+        }
+    }
 
-p#output {
-    margin: 0 12px;
-    font-size: 19px;
-    font-weight: bold;
-    padding: 0 10px 0 0;
-    max-height: 100px;
-    display: block;
-    overflow-y: auto;
+    #loader {
+        margin: 0 auto;
+        width: 25px;
+        height: 50px;
+        display: grid;
+        color: #000;
+        background:
+            linear-gradient(currentColor 0 0) top/100% 2px,
+            radial-gradient(farthest-side at  top, #0000 calc(100% - 2px),currentColor calc(100% - 1px) ,#0000) top,
+            linear-gradient(currentColor 0 0) bottom/100% 2px,
+            radial-gradient(farthest-side at  bottom, #0000 calc(100% - 2px),currentColor calc(100% - 1px) ,#0000) bottom;
+        background-size: 100% 1px,100% 50%; 
+        background-repeat: no-repeat;
+        animation: l18 4s infinite linear;
+    
+        &::before,
+        &::after {
+            content: "";
+            grid-area: 1/1;
+            background: inherit;
+            border: inherit;
+            animation: inherit;
+        }
+    
+        &::after {
+            animation-duration: 2s;
+        }
+    }
+
+    p#output {
+        margin: 0 12px;
+        font-size: 19px;
+        font-weight: bold;
+        padding: 0 10px 0 0;
+        max-height: 100px;
+        display: block;
+        overflow-y: auto;
+    }
+
+    hr {
+        width: 80%;
+        margin: 20px auto;
+        border: 1px solid #ccc;
+    }
 }
 
 div#settings-page {
@@ -65,67 +128,6 @@ div#settings-page {
     p#status {
         font-size: 15px;
     }
-}
-
-div.in-wrap {
-    display: flex;
-    justify-content: center;
-
-    input#input {
-        width: 200px;
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 15px;
-        outline: none;
-        margin-right: 10px;
-    }
-
-    button#ask {
-        width: 100px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 15px;
-        background: #FFF;
-        cursor: pointer;
-        padding: 5px;
-        outline: none;
-    }
-}
-
-hr {
-    width: 80%;
-    margin: 20px auto;
-    border: 1px solid #ccc;
-}
-
-#loader {
-    margin: 0 auto;
-    width: 25px;
-    height: 50px;
-    display: grid;
-    color: #000;
-    background:
-        linear-gradient(currentColor 0 0) top/100% 2px,
-        radial-gradient(farthest-side at  top, #0000 calc(100% - 2px),currentColor calc(100% - 1px) ,#0000) top,
-        linear-gradient(currentColor 0 0) bottom/100% 2px,
-        radial-gradient(farthest-side at  bottom, #0000 calc(100% - 2px),currentColor calc(100% - 1px) ,#0000) bottom;
-    background-size: 100% 1px,100% 50%; 
-    background-repeat: no-repeat;
-    animation: l18 4s infinite linear;
-}
-
-#loader::before,
-#loader::after {
-    content: "";
-    grid-area: 1/1;
-    background: inherit;
-    border: inherit;
-    animation: inherit;
-}
-
-#loader::after {
-    animation-duration: 2s;
 }
 
 @keyframes l18 {
