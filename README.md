@@ -53,6 +53,6 @@ $ `npm run dev`<br><br>
 
 <hr>
 
-## :lock: Data Protextion Disclaimer
+## :lock: Data Protection Disclaimer
 
 This extension does not store any personal data. However website content that might include personal data is sent to Google Gemini AI when a question is submitted.
