@@ -96,7 +96,11 @@ const apiCall = async function(pageData, question){
     const output = document.getElementById("output");
     if (!output) return;
 
-    const res = response.candidates[0].content.parts[0].text;
+    const res = response?.candidates[0]?.content?.parts[0]?.text;
+    if (!res){
+        output.innerHTML = "Error: No response from the API.";
+        return;
+    }
     output.innerHTML = res;
 
     stopLoader();
