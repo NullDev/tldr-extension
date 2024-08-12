@@ -16,11 +16,12 @@ It is my submission for the Google AI Competition
 
 ## :star: Downloading the extension
 
-The extension can be downloaded from the official Chrome store: [TODO:LINK](#x)
+The extension can be downloaded from the official Chrome store: <br>
+https://chromewebstore.google.com/detail/tldr/ceoomcdkamoifgcdeflofkdmpjmmcnka
 
 <hr>
 
-## :satellite: Using prepacked extension
+## :satellite: Using prepacked extension [DEV ONLY]
 
 1. Download the [latest crx from the release page](https://github.com/NullDev/tldr-extension/releases) <br><br>
 2. Either go to `chrome://extensions/` and drag-n-drop the crx in there, or open the crx with chrome. Then enable it (!) which might require enabling dev mode
@@ -31,7 +32,7 @@ If that does not work, see [Building yourself](#wrench-building-yourself).
 
 <hr>
 
-## :wrench: Building yourself
+## :wrench: Building yourself [DEV ONLY]
 
 0. Open up your favourite terminal (and navigate somewhere you want to download the repository to). <br><br>
 1. Make sure you have NodeJS installed. Test by entering <br>
