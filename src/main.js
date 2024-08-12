@@ -1,4 +1,5 @@
-import "./style/style.scss";
+import "./style/style.scss"; // @ts-ignore
+import scriptPath from "./content?script&module";
 
 /* ========================= */
 /* = Copyright (c) NullDev = */
@@ -107,6 +108,28 @@ const apiCall = async function(pageData, question){
 };
 
 /**
+ * Handle the response
+ *
+ * @param {Object} response
+ * @param {chrome.tabs.Tab} activeTab
+ * @param {string} value
+ * @return {void}
+ */
+const handleResponse = function(response, activeTab, value){
+    if (chrome.runtime.lastError){
+        console.error(chrome.runtime.lastError.message);
+        return;
+    }
+
+    const { content } = response;
+    if (!content) return;
+
+    apiCall(content, value).then(() => { // @ts-ignore
+        chrome.tabs.sendMessage(activeTab.id, { type: "stopLoader" });
+    });
+};
+
+/**
  * Ask the question
  *
  * @return {void}
@@ -122,18 +145,25 @@ const ask = function(){
         const activeTab = tabs[0];
         if (!activeTab || !activeTab.id) return;
 
-        chrome.tabs.sendMessage(activeTab.id, { type: "getPageContent" }, (response) => {
+        chrome.tabs.sendMessage(activeTab.id, { type: "ping" }, function(){
             if (chrome.runtime.lastError){
-                console.error(chrome.runtime.lastError.message);
-                return;
+                chrome.scripting.executeScript(
+                    { // @ts-ignore
+                        target: { tabId: activeTab.id },
+                        files: [scriptPath],
+                    },
+                    () => { // @ts-ignore
+                        chrome.tabs.sendMessage(activeTab.id, { type: "getPageContent" }, (response) => {
+                            handleResponse(response, activeTab, value);
+                        });
+                    },
+                );
             }
-
-            const { content } = response;
-            if (!content) return;
-
-            apiCall(content, value).then(() => { // @ts-ignore
-                chrome.tabs.sendMessage(activeTab.id, { type: "stopLoader" });
-            });
+            else { // @ts-ignore
+                chrome.tabs.sendMessage(activeTab.id, { type: "getPageContent" }, (response) => {
+                    handleResponse(response, activeTab, value);
+                });
+            }
         });
     });
 };

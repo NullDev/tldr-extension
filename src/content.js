@@ -52,6 +52,9 @@ const scanner = `
 `;
 
 const startLoader = function(){
+    const sc = document.getElementById("__f1fc290aff698d18__SCAN_WRAPPER__");
+    if (sc) return;
+
     document.body.insertAdjacentHTML("beforeend", scanner);
 };
 
