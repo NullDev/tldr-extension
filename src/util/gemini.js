@@ -25,6 +25,7 @@ const apiCall = async function(pageData, question){
             return;
         }
 
+        Loader.stopLoader();
         output.innerHTML = "Error: API key not set. Click on the gear icon on the top right to set the key.";
         return;
     }
@@ -53,25 +54,35 @@ const apiCall = async function(pageData, question){
         },
     };
 
-    const response = await fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-    }).then((res) => res.json());
-
     const output = document.getElementById("output");
     if (!output) return;
 
-    const res = response?.candidates[0]?.content?.parts[0]?.text;
-    if (!res){
-        output.innerHTML = "Error: No response from the API.";
-        return;
-    }
-    output.innerHTML = res;
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        }).then((res) => res.json());
 
-    Loader.stopLoader();
+        const res = response?.candidates[0]?.content?.parts[0]?.text;
+        if (!res){
+            output.innerHTML = "Error: No response from the API.";
+            Loader.stopLoader();
+            return;
+        }
+        output.innerHTML = res;
+    }
+
+    catch (e){
+        output.innerHTML = "Incorrect API key or API limit reached.";
+        console.error(e);
+    }
+
+    finally {
+        Loader.stopLoader();
+    }
 };
 
 export default apiCall;
