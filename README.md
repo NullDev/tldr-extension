@@ -21,6 +21,12 @@ https://chromewebstore.google.com/detail/ [REMOVED DUE TO LATEST VERSION NOT BEI
 
 <hr>
 
+## :diamond_shape_with_a_dot_inside: Feature requests & Issues
+
+Feature request or discovered a bug? Please [open an Issue](https://github.com/NullDev/tldr-extension/issues/new/choose) here on GitHub.
+
+<hr>
+
 ## :satellite: Using prepacked extension [DEV ONLY]
 
 1. Download the [latest crx from the release page](https://github.com/NullDev/tldr-extension/releases) <br><br>
