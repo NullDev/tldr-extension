@@ -1,5 +1,5 @@
 # tl;dr
-[![License](https://img.shields.io/github/license/NullDev/tldr-extension?label=License&logo=Creative%20Commons)](https://github.com/NullDev/tldr-extension/blob/master/LICENSE) [![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/NullDev/tldr-extension?logo=Cachet)](https://github.com/NullDev/tldr-extension/issues?q=is%3Aissue+is%3Aclosed)
+[![License](https://img.shields.io/github/license/NullDev/tldr-extension?label=License&logo=Creative%20Commons)](https://github.com/NullDev/tldr-extension/blob/master/LICENSE) [![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/NullDev/tldr-extension?logo=Cachet)](https://github.com/NullDev/tldr-extension/issues?q=is%3Aissue+is%3Aclosed) [![ESLint](https://github.com/NullDev/tldr-extension/actions/workflows/eslint.yml/badge.svg)](https://github.com/NullDev/tldr-extension/actions/workflows/eslint.yml)
 
 <p align="center"><img height="250" width="auto" src="/icons/icon128.png" /></p>
 <p align="center"><b>tl;dr - Ask websites anything</b></p>
