@@ -17,6 +17,10 @@ import scriptPath from "./content?script&module";
 const handleResponse = function(response, activeTab, value){
     if (chrome.runtime.lastError){
         console.error(chrome.runtime.lastError.message);
+        const output = document.getElementById("output");
+        if (!output) return;
+        output.innerHTML = "Error: Cannot execute on this page.";
+        output.style.display = "block";
         return;
     }
 
@@ -37,34 +41,44 @@ const ask = function(){
     const input = /** @type {HTMLInputElement} */ (document.getElementById("input"));
     if (!input) return;
 
+    const output = document.getElementById("output");
+    if (!output) return;
+
     const { value } = input;
     if (!value) return;
 
-    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs){
-        const activeTab = tabs[0];
-        if (!activeTab || !activeTab.id) return;
+    try {
+        chrome.tabs.query({ active: true, currentWindow: true }, function(tabs){
+            const activeTab = tabs[0];
+            if (!activeTab || !activeTab.id) return;
 
-        chrome.tabs.sendMessage(activeTab.id, { type: "ping" }, function(){
-            if (chrome.runtime.lastError){
-                chrome.scripting.executeScript(
-                    { // @ts-ignore
-                        target: { tabId: activeTab.id },
-                        files: [scriptPath],
-                    },
-                    () => { // @ts-ignore
-                        chrome.tabs.sendMessage(activeTab.id, { type: "getPageContent" }, (response) => {
-                            handleResponse(response, activeTab, value);
-                        });
-                    },
-                );
-            }
-            else { // @ts-ignore
-                chrome.tabs.sendMessage(activeTab.id, { type: "getPageContent" }, (response) => {
-                    handleResponse(response, activeTab, value);
-                });
-            }
+            chrome.tabs.sendMessage(activeTab.id, { type: "ping" }, function(){
+                if (chrome.runtime.lastError){
+                    chrome.scripting.executeScript(
+                        { // @ts-ignore
+                            target: { tabId: activeTab.id },
+                            files: [scriptPath],
+                        },
+                        () => { // @ts-ignore
+                            chrome.tabs.sendMessage(activeTab.id, { type: "getPageContent" }, (response) => {
+                                handleResponse(response, activeTab, value);
+                            });
+                        },
+                    );
+                }
+                else { // @ts-ignore
+                    chrome.tabs.sendMessage(activeTab.id, { type: "getPageContent" }, (response) => {
+                        handleResponse(response, activeTab, value);
+                    });
+                }
+            });
         });
-    });
+    }
+    catch (e){
+        console.error(e);
+        output.innerHTML = "Error: Cannot execute on this page.";
+        output.style.display = "block";
+    }
 };
 
 /**
@@ -120,6 +134,16 @@ const init = function(){
         if (!apiKey) return;
         apiKey.value = data.apiKey || "";
     });
+
+    const cYear = /** @type {HTMLSpanElement} */ (document.getElementById("c-year"));
+    if (!cYear) return;
+    cYear.textContent = String(new Date().getFullYear());
+
+    const version = /** @type {HTMLSpanElement} */ (document.getElementById("version"));
+    if (!version) return;
+
+    const manifestData = chrome.runtime.getManifest();
+    version.textContent = manifestData.version;
 };
 
 (() => {
