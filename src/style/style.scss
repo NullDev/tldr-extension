@@ -129,6 +129,15 @@ div#settings-page {
     p#status {
         font-size: 15px;
     }
+
+    .settings-footer {
+        position: absolute;
+        bottom: 13px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        width: 100%;
+    }
 }
 
 @keyframes l18 {
