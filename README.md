@@ -17,7 +17,7 @@ It is my submission for the Google AI Competition
 ## :star: Downloading the extension
 
 The extension can be downloaded from the official Chrome store: <br>
-https://chromewebstore.google.com/detail/ [REMOVED DUE TO LATEST VERSION NOT BEING PUBLISHED YET]
+https://chromewebstore.google.com/detail/tldr/ceoomcdkamoifgcdeflofkdmpjmmcnka
 
 <hr>
 
