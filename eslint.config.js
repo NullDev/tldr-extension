@@ -2,7 +2,7 @@
 import babelParser from "@babel/eslint-parser";
 
 export default [{                           // NullDev-Style ESLint Config: https://github.com/NullDevCo/JavaScript-Styleguide
-    ignores: ["dist", "node_modules"],      // Ignore dist folders and dependencies
+    ignores: ["**/dist/**", "node_modules"],      // Ignore dist folders and dependencies
     files: ["**/*.js", "**/*.jsx"],
     plugins: {},                            // Additional ESLint Plugins
     languageOptions: {
@@ -15,7 +15,7 @@ export default [{                           // NullDev-Style ESLint Config: http
                 presets: [                  // If used with React, add "@babel/preset-react" here and do `npm i -D @babel/preset-react`
                 ],
                 plugins: [                  // additional plugins for new ES-proposals such as "@babel/plugin-proposal-class-properties"
-                    ["@babel/plugin-syntax-import-attributes", { "deprecatedAssertSyntax": true }],
+                    ["@babel/plugin-syntax-import-attributes", { deprecatedAssertSyntax: true }],
                 ],
             },
         },
