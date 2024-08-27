@@ -27,17 +27,6 @@ Feature request or discovered a bug? Please [open an Issue](https://github.com/N
 
 <hr>
 
-## :satellite: Using prepacked extension [DEV ONLY]
-
-1. Download the [latest crx from the release page](https://github.com/NullDev/tldr-extension/releases) <br><br>
-2. Either go to `chrome://extensions/` and drag-n-drop the crx in there, or open the crx with chrome. Then enable it (!) which might require enabling dev mode
-3. Once the extension is loaded: Click on it, then click the gear icon and paste your gemini key. Then hit save <br><br>
-4. All done! You can now use tl;dr :) 
-
-If that does not work, see [Building yourself](#wrench-building-yourself).
-
-<hr>
-
 ## :wrench: Building yourself [DEV ONLY]
 
 0. Open up your favourite terminal (and navigate somewhere you want to download the repository to). <br><br>
@@ -57,6 +46,17 @@ $ `npm run dev`<br><br>
 4. Once built, in Chrome, go to `chrome://extensions/`, click "load unpacked" and select the dist folder in the repo. <br><br>
 5. Click on the extension, click the gear icon, and paste your gemini key. Then hit save <br><br>
 6. Done!
+
+<hr>
+
+## :satellite: Using prepacked extension [DEV ONLY]
+
+1. Download the [latest crx from the release page](https://github.com/NullDev/tldr-extension/releases) <br><br>
+2. Either go to `chrome://extensions/` and drag-n-drop the crx in there, or open the crx with chrome. Then enable it (!) which might require enabling dev mode
+3. Once the extension is loaded: Click on it, then click the gear icon and paste your gemini key. Then hit save <br><br>
+4. All done! You can now use tl;dr :) 
+
+If that does not work, see [Building yourself](#wrench-building-yourself).
 
 <hr>
 
