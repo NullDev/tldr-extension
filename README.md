@@ -8,7 +8,9 @@
 ## :question: What does it do?
 
 This is a Chrome Extension that allows users to asks websites specific questions about their content. The page content is sanitized and sent to Gemini along with the question of the user. <br><br>
-It is my submission for the Google AI Competition
+It is my submission for the Google AI Competition: 
+- https://ai.google.dev/competition/projects/tldr
+- https://web.archive.org/web/20240904205925/https://ai.google.dev/competition/projects/tldr (Archive)
 
 **Demo Video:** https://www.youtube.com/watch?v=1dtRHrxl8lc
 
